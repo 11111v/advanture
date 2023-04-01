@@ -1,0 +1,12 @@
+{
+    "LogView": {
+        "name": "LogView",
+        "loadPath": null,
+        "viewClassName": null
+    },
+    "MessageItemPoolView": {
+        "name": "MessageItemPoolView",
+        "loadPath": null,
+        "viewClassName": null
+    }
+}

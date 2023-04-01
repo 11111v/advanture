@@ -6,3 +6,7 @@ Advanturestart/Packages
 Advanturestart/Assembly-CSharp.csproj
 Advanturestart/.vsconfig
 *.sln
+/Advanturestart/Temp
+/Advanturestart/.idea
+/Advanturestart/Assembly-CSharp-Editor.csproj
+/Advanturestart/Assembly-CSharp-firstpass.csproj

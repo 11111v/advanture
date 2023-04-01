@@ -1,0 +1,8 @@
+﻿Advanturestart/.vs
+Advanturestart/Library
+Advanturestart/Logs
+Advanturestart/obj
+Advanturestart/Packages
+Advanturestart/Assembly-CSharp.csproj
+Advanturestart/.vsconfig
+*.sln

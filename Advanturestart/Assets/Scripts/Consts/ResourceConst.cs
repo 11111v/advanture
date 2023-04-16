@@ -8,6 +8,8 @@ public class ResourceConst
     {
         public const string logView= "LogView";
         public const string MessageItemPoolVIew = "MessageItemPoolView";
+        public const string LevelOneView = "LevelOneView";
+
         public const string loginView = "LoginView";
         public const string registerView = "RegisterView";
         public const string resetPasView = "ResetPasView";

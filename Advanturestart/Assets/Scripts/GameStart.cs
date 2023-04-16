@@ -8,13 +8,24 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStart : UIBase
 {
+    public List<GameObject> dontDestoryOnLoadObjs;
     protected override void Awake()
     {
+        if (SceneManager.GetActiveScene().name != "Start")
+        {
+           return;
+        }
         base.Awake();
         GameObjectPool.Instance.Awake();
+        for (int i = 0; i < dontDestoryOnLoadObjs.Count; i++)
+        {
+            if(dontDestoryOnLoadObjs[i]!=null)
+                DontDestroyOnLoad(dontDestoryOnLoadObjs[i]);
+        }
         RoleLogicData.Init(); 
         UIManager.Instance.Init();
         StartCoroutine(TableData.Instance.InitData());
@@ -22,6 +33,10 @@ public class GameStart : UIBase
     }
     protected override void Start()
     {
+        if (SceneManager.GetActiveScene().name != "Start")
+        {
+            return;
+        }
         base.Start();
         //TestSerialize(ResourceConst.UI.MessageItemPoolVIew);
         
@@ -43,6 +58,10 @@ public class GameStart : UIBase
     // Update is called once per frame
     protected override void Update()
     {
+        if (SceneManager.GetActiveScene().name != "Start")
+        {
+            return;
+        }
         base.Update();
         //NetManager.Instance.Update();
         GameObjectPool.Instance.Update();

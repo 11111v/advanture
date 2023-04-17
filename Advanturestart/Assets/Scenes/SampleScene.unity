@@ -2495,4 +2495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44bd55c19e9e3b4285adae27cac8fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPanel: {fileID: 1050197919}
+  settingPanel: {fileID: 0}
+  mixer: {fileID: 0}
+  slider: {fileID: 0}
+  dropdown: {fileID: 0}

@@ -5,6 +5,14 @@ public enum EnumNotify
 {
     TEST1,
     TEST2,
+    LevelOneDialog,
+    LevelTwoDialog,
+    AddBookText,
+    ChangeNormal,
+    PlayerHurt,
+    EnemyHurt,
+    SubEnemyCount,
+    GetTwoJump,
 }
 public class EventDispatcher
 {

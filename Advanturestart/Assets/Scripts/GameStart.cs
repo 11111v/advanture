@@ -58,6 +58,11 @@ public class GameStart : UIBase
     // Update is called once per frame
     protected override void Update()
     {
+        // if (Input.GetKeyDown(KeyCode.S))
+        // {
+        //     PopUpManager.Instance.ShowMessage("1111111111111111");
+        // }
+        
         if (SceneManager.GetActiveScene().name != "Start")
         {
             return;

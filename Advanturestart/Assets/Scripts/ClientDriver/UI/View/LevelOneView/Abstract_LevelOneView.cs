@@ -10,9 +10,13 @@ using SuperScrollView;
 public class Abstract_LevelOneView : UIBase
 {
     #region Member
+    protected Text dialogTxt_Text;
+    protected GameObject video_GameObject;
     #endregion
     protected override void Awake()
     {
         base.Awake();
+        dialogTxt_Text = transform.Find("DialogTxt").GetComponent<Text>();
+        video_GameObject = transform.Find("Video").gameObject;
     }
 }

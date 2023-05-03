@@ -35,7 +35,8 @@ public class UIManager : Singleton<UIManager>
         GameObject Prefab = (GameObject)Resources.Load("Prefabs/UI/" + uiName);
         if (Prefab != null)
         {
-
+            if(uIRoot==null)
+                uIRoot = GameObject.FindGameObjectWithTag("UIRoot");
             GameObject gameObject = GameObject.Instantiate(Prefab, uIRoot.transform);
             if(uIRoot!=null&&isInitTransform)
             {

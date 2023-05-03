@@ -101,6 +101,9 @@ public class GameObjectPool : Singleton<GameObjectPool>
 
         if (parent != null)
             go.transform.SetParent(parent);
+        go.transform.localScale=Vector3.one;
+        go.transform.localPosition = new Vector3(0, 0, -300);
+
         return go;
     }
 

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - UIRoot
   - NPC
+  - Step
+  - Ground
+  - Weapon
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -17,9 +21,9 @@ TagManager:
   - 
   - NPC
   - Player
-  - 
-  - 
-  - 
+  - Weapon
+  - Wall
+  - Ground
   - 
   - 
   - 

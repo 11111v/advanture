@@ -13,14 +13,14 @@ public class MessageItemPoolView : Abstract_MessageItemPoolView
         base.Awake();
         messageTemplate_GameObject.SetActive(false);
         messages = PopUpManager.Instance.GetMessageQuene();
-        GameObjectPool.WarmPool(messageTemplate_GameObject, 10,parent:this.gameObject.transform);
+        GameObjectPool.WarmPool(messageTemplate_GameObject, 1,parent:this.gameObject.transform);
     }
     protected override void Update()
     {
         base.Update();
         if(messages.Count>0)
         {
-            var go = GameObjectPool.CreateObject(messageTemplate_GameObject, Vector3.zero, Quaternion.identity,this.gameObject.transform);
+            var go = GameObjectPool.CreateObject(messageTemplate_GameObject, new Vector3(0,0,-300), Quaternion.identity,this.gameObject.transform);
             MessageType messageType=  messages.Dequeue();
             MessageItem messageItem = new MessageItem(go.transform);
             messageItem.msg_Text.text= messageType.msg;
@@ -29,10 +29,10 @@ public class MessageItemPoolView : Abstract_MessageItemPoolView
                 GameObjectPool.ReleaseObject(go);
             });
         }
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            PopUpManager.Instance.ShowMessage("mddd");
-        }
+        // if(Input.GetKeyDown(KeyCode.S))
+        // {
+        //     PopUpManager.Instance.ShowMessage("mddd");
+        // }
     }
 }
 

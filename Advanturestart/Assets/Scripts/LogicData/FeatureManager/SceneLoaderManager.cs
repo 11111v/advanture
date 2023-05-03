@@ -25,7 +25,11 @@ public class SceneLoaderManager : MonoBehaviour
     {
         StartCoroutine(LoadSceneAsync(sceneName));
     }
-
+    // 加载场景
+    public void LoadScene(int index)
+    {
+        StartCoroutine(LoadSceneAsync(index));
+    }
     // 异步加载场景并显示加载进度 UI
     private IEnumerator LoadSceneAsync(string sceneName)
     {
@@ -60,7 +64,40 @@ public class SceneLoaderManager : MonoBehaviour
         // 隐藏加载进度 UI
         //loadingUI.SetActive(false);
     }
+    // 异步加载场景并显示加载进度 UI
+    private IEnumerator LoadSceneAsync(int index)
+    {
+        // 显示加载进度 UI
+        //yield return new WaitForSeconds(delayTime);
+        //loadingUI.SetActive(true);
 
+        // 异步加载场景
+        asyncLoad = SceneManager.LoadSceneAsync(index);
+        asyncLoad.allowSceneActivation = false; // 不自动激活场景
+
+        // 更新加载进度 UI
+        while (asyncLoad.progress < 0.9f)
+        {
+            //loadingUI.GetComponent<LoadingUI>().UpdateProgress(asyncLoad.progress);
+            yield return null;
+        }
+
+        //loadingUI.GetComponent<LoadingUI>().UpdateProgress(1.0f);
+
+        // 等待玩家按下按钮来激活场景
+        while (!asyncLoad.isDone)
+        {
+            //if (Input.GetButtonDown("Jump")) // 假设按下 Jump 键可以激活场景
+            {
+                asyncLoad.allowSceneActivation = true;
+            }
+
+            yield return null;
+        }
+
+        // 隐藏加载进度 UI
+        //loadingUI.SetActive(false);
+    }
     // 卸载场景
     public void UnloadScene(string sceneName)
     {
